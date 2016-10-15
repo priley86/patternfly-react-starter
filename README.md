@@ -145,4 +145,4 @@ $ node run build                # Or, `node run build --release` for production 
 This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/priley86/patternfly-react-boiler/blob/master/LICENSE.txt) file.
 
 ---
-Made with ♥ by Patrick Riley ([@priley86](https://twitter.com/priley86)) and the Patternfly [team]https://github.com/patternfly/patternfly/graphs/contributors)
+Made with ♥ by the Patternfly [team](https://github.com/patternfly/patternfly/graphs/contributors)
