@@ -5,7 +5,8 @@ A Patternfly + React starter kit based on [**React Static Boilerplate**](https:/
 **Demo**: https://patternfly-react-starter.firebaseapp.com/ &nbsp;|&nbsp; **View** [docs](./docs) &nbsp;|&nbsp; **Follow us** on
 [Gitter](https://gitter.im/patternfly/patternfly), [Twitter](https://twitter.com/patternfly_des), and [Slack](https://patternfly.slack.com) &nbsp;|&nbsp;
 
-![Image of PatternFly](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/patternfly-orb.png) + 
+![Image of PatternFly](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/patternfly-orb.png)
+![Image of Loves](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/icon-heart.png)
 ![Image of React](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/react.png)
 
 ### Features
