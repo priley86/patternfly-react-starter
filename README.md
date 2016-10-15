@@ -5,6 +5,9 @@ A Patternfly + React starter kit based on [**React Static Boilerplate**](https:/
 **Demo**: https://patternfly-react-starter.firebaseapp.com/ &nbsp;|&nbsp; **View** [docs](./docs) &nbsp;|&nbsp; **Follow us** on
 [Gitter](https://gitter.im/patternfly/patternfly), [Twitter](https://twitter.com/patternfly_des), and [Slack](https://patternfly.slack.com) &nbsp;|&nbsp;
 
+![Image of PatternFly](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/patternfly-orb.png)
+![Image of React](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/react.png)
+
 ### Features
 &nbsp; &nbsp; ✓ Includes [Patternfly](https://patternfly.org) CSS & some React implementations of Patternfly components<br>
 &nbsp; &nbsp; ✓ Modern JavaScript syntax ([ES2015](http://babeljs.io/docs/learn-es2015/)+) via [Babel](http://babeljs.io/), modern CSS syntax via [PostCSS](https://github.com/postcss/postcss)<br>
