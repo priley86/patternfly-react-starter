@@ -1,41 +1,12 @@
-# React Static Boilerplate &nbsp; [![Build Status](http://img.shields.io/travis/kriasoft/react-static-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/kriasoft/react-static-boilerplate) [![To-do](https://img.shields.io/waffle/label/kriasoft/react-static-boilerplate/to-do.svg?style=flat-square)](https://waffle.io/kriasoft/react-static-boilerplate) [![Online Chat](http://img.shields.io/badge/chat_room-%23react--static--boilerplate-blue.svg?style=flat-square)](https://gitter.im/kriasoft/react-static-boilerplate)
+# Patternfly React Starter
 
-> [**React Static Boilerplate**](https://github.com/kriasoft/react-static-boilerplate) (RSB) is an
-> opinionated boilerplate and tooling for creating modern stand-alone web applications (aka
-> [SPA](https://en.wikipedia.org/wiki/Single-page_application)s) for a serverless architecture. RSB
-> significantly reduces cost by eliminating the need for servers such as EC2 instances because the
-> entire site can be hosted directly from CDN ([Firebase](https://www.firebase.com/), [GitHub
-> Pages](https://pages.github.com/), [Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html),
-> or other similar cloud storage). Sites built with RSB can be fully functional with REST API or
-> GraphQL calls to micro-services such as [Amazon Lambda](https://aws.amazon.com/lambda/),
-> [Azure Functions](https://azure.microsoft.com/services/functions/), or dynamic Docker endpoints
-> hosted on [DigitalOcean](https://www.digitalocean.com/?refcode=eef302dbae9f&utm_source=github&utm_medium=oss_sponsorships&utm_campaign=opencollective).
-> RSB demonstrates how to use component-based UI development approach with best of breed
-> technologies including [React](http://facebook.github.io/react/), [Redux](http://redux.js.org/),
-> [Babel](http://babeljs.io/), [Webpack](https://webpack.github.io/), [Browsersync](https://browsersync.io/),
-> [React Hot Loader](http://gaearon.github.io/react-hot-loader/) and more.
+A Patternfly + React starter kit based on [**React Static Boilerplate**](https://github.com/kriasoft/react-static-boilerplate).
 
-**The work is being sponsored by:**
-
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/0/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/0/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/1/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/1/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/2/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/2/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/3/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/3/avatar.svg" height="64">
-</a> &nbsp;
-<a href="https://opencollective.com/react-static-boilerplate/sponsor/4/website" target="_blank">
-  <img src="https://opencollective.com/react-static-boilerplate/sponsor/4/avatar.svg" height="64">
-</a>
-
+**Demo**: https://patternfly-react-starter.firebaseapp.com/ &nbsp;|&nbsp; **View** [docs](./docs) &nbsp;|&nbsp; **Follow us** on
+[Gitter](https://gitter.im/patternfly/patternfly), [Twitter](https://twitter.com/patternfly_des), and [Slack](https://patternfly.slack.com) &nbsp;|&nbsp;
 
 ### Features
-
+&nbsp; &nbsp; ✓ Includes [Patternfly](https://patternfly.org) CSS & some React implementations of Patternfly components<br>
 &nbsp; &nbsp; ✓ Modern JavaScript syntax ([ES2015](http://babeljs.io/docs/learn-es2015/)+) via [Babel](http://babeljs.io/), modern CSS syntax via [PostCSS](https://github.com/postcss/postcss)<br>
 &nbsp; &nbsp; ✓ Component-based UI architecture via [React](http://facebook.github.io/react/), [Webpack](https://webpack.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)<br>
 &nbsp; &nbsp; ✓ Application state management /w time-travel debugging via [Redux](http://redux.js.org/) (see [`main.js`](main.js), [`core/store.js`](core/store.js))<br>
@@ -45,18 +16,14 @@
 &nbsp; &nbsp; ✓ Cross-device testing with [Browsersync](https://browsersync.io/) (see [`run.js#start`](run.js))<br>
 &nbsp; &nbsp; ✓ **24/7** community support on [Gitter](https://gitter.im/kriasoft/react-static-boilerplate); customization requests on [Codementor](https://www.codementor.io/koistya)<br>
 
-**Demo**: https://rsb.kriasoft.com &nbsp;|&nbsp; **View** [docs](./docs) &nbsp;|&nbsp; **Follow us** on
-[Gitter](https://gitter.im/kriasoft/react-static-boilerplate), [Twitter](https://twitter.com/ReactStatic),
-or [ProductHunt](https://www.producthunt.com/tech/react-static-boilerplate) &nbsp;|&nbsp;
 **Learn** to [React.js and ES6](#learn-reactjs-and-es6)
-
 
 ### Directory Layout
 
 ```shell
 .
 ├── /components/                # Shared or generic UI components
-│   ├── /Button/                # Button component
+│   ├── /CardView/              # CardView component
 │   ├── /Layout/                # Website layout component
 │   ├── /Link  /                # Link component to be used insted of <a>
 │   └── /...                    # etc.
@@ -66,7 +33,7 @@ or [ProductHunt](https://www.producthunt.com/tech/react-static-boilerplate) &nbs
 │   └── /store.js               # Application state manager (Redux)
 ├── /node_modules/              # 3rd-party libraries and utilities
 ├── /pages/                     # React components for web pages
-│   ├── /about/                 # About page
+│   ├── /app/                   # App page
 │   ├── /error/                 # Error page
 │   ├── /home/                  # Home page
 │   └── /...                    # etc.
@@ -131,7 +98,6 @@ $ npm run lint                  # Check JavaScript and CSS code for potential is
 $ npm run test                  # Run unit tests. Or, `npm run test:watch`
 ```
 
-
 ### How to Deploy
 
 Update `publish` script in the [`run.js`](run.js) file with your full Firebase project name as found
@@ -154,17 +120,6 @@ $ node run build                # Or, `node run build --release` for production 
 ```
 
 
-### How to Update
-
-You can always fetch and merge the recent changes from this repo back into your own project:
-
-```shell
-$ git checkout master
-$ git fetch react-static-boilerplate
-$ git merge react-static-boilerplate/master
-$ npm install
-```
-
 
 ### Learn React.js and ES6
 
@@ -185,20 +140,9 @@ $ npm install
 * [History](https://github.com/mjackson/history) — HTML5 History API wrapper library that handle navigation in single-page apps
 
 
-### How to Contribute
-
-Anyone and everyone is welcome to [contribute](CONTRIBUTING.md) to this project. The best way to
-start is by checking our [open issues](https://github.com/kriasoft/react-static-boilerplate/issues),
-[submit a new issues](https://github.com/kriasoft/react-static-boilerplate/issues/new?labels=bug) or
-[feature request](https://github.com/kriasoft/react-static-boilerplate/issues/new?labels=enhancement),
-participate in discussions, upvote or downvote the issues you like or dislike, send [pull
-requests](CONTRIBUTING.md#pull-requests).
-
-
 ### License
 
-Copyright © 2015-present Kriasoft, LLC. This source code is licensed under the MIT license found in
-the [LICENSE.txt](https://github.com/kriasoft/react-static-boilerplate/blob/master/LICENSE.txt) file.
+This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/priley86/patternfly-react-boiler/blob/master/LICENSE.txt) file.
 
 ---
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/kriasoft/react-static-boilerplate/graphs/contributors)
+Made with ♥ by Patrick Riley ([@priley86](https://twitter.com/priley86)) and the Patternfly [team]https://github.com/patternfly/patternfly/graphs/contributors)

@@ -32,11 +32,14 @@ const config = {
 
   // The entry point for the bundle
   entry: [
-    /* Material Design Lite (https://getmdl.io) */
-    '!!style!css!react-mdl/extra/material.min.css',
-    'react-mdl/extra/material.min.js',
+    //css entries
+    // '!!style!css!patternfly/dist/css/patternfly.css',
+    // '!!style!css!patternfly/dist/css/patternfly-additions.css',
+    
+    //js entries
+    'jquery-match-height/dist/jquery.matchHeight.js',
     /* The main entry point of your JavaScript application */
-    './main.js',
+    './main.js'
   ],
 
   // Options affecting the output of the compilation
@@ -135,11 +138,11 @@ const config = {
         loader: path.resolve(__dirname, './utils/markdown-loader.js'),
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000',
       },
       {
-        test: /\.(eot|ttf|wav|mp3)$/,
+        test: /\.(eot|ttf|wav|mp3)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
       },
     ],
