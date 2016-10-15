@@ -142,7 +142,7 @@ $ node run build                # Or, `node run build --release` for production 
 
 ### License
 
-This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/priley86/patternfly-react-boiler/blob/master/LICENSE.txt) file.
+This source code is licensed under the MIT license found in the [LICENSE.txt](https://github.com/priley86/patternfly-react-starter/blob/master/LICENSE.txt) file.
 
 ---
 Made with ♥ by the Patternfly [team](https://github.com/patternfly/patternfly/graphs/contributors)
