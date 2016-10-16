@@ -10,7 +10,7 @@ A Patternfly + React starter kit based on [**React Static Boilerplate**](https:/
 ![Image of React](https://raw.githubusercontent.com/priley86/patternfly-react-starter/master/icons/react.png)
 
 ### Features
-&nbsp; &nbsp; ✓ Includes [Patternfly](https://patternfly.org) CSS & some React implementations of Patternfly components<br>
+&nbsp; &nbsp; ✓ Includes [Patternfly](http://www.patternfly.org/) CSS & some React implementations of Patternfly components<br>
 &nbsp; &nbsp; ✓ Modern JavaScript syntax ([ES2015](http://babeljs.io/docs/learn-es2015/)+) via [Babel](http://babeljs.io/), modern CSS syntax via [PostCSS](https://github.com/postcss/postcss)<br>
 &nbsp; &nbsp; ✓ Component-based UI architecture via [React](http://facebook.github.io/react/), [Webpack](https://webpack.github.io/) and [CSS Modules](https://github.com/css-modules/css-modules)<br>
 &nbsp; &nbsp; ✓ Application state management /w time-travel debugging via [Redux](http://redux.js.org/) (see [`main.js`](main.js), [`core/store.js`](core/store.js))<br>
@@ -66,8 +66,8 @@ generator](https://github.com/kriasoft/react-static-boilerplate/tree/generator-r
 bootstrap your project:
 
 ```shell
-$ git clone -o react-static-boilerplate -b master --single-branch \
-      https://github.com/kriasoft/react-static-boilerplate.git MyApp
+$ git clone -o upstream -b master --single-branch \
+      https://github.com/priley86/patternfly-react-starter.git MyApp
 $ cd MyApp
 $ npm install                   # Install project dependencies listed in package.json
 ```
