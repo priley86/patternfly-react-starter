@@ -7,7 +7,12 @@ class AppListView extends React.Component {
   }
 
   componentDidUpdate() {
+    this.unbind();
     this.bindExpand();
+  }
+
+  componentWillUnmount(){
+    this.unbind();
   }
 
   bindExpand() {
@@ -26,6 +31,11 @@ class AppListView extends React.Component {
         .parent().removeClass("list-view-pf-expand-active")
         .find(".fa-angle-right").removeClass("fa-angle-down");
     });
+  }
+  
+  unbind() {
+    $(".list-group-item-header").off('click');
+    $(".list-group-item-container .close").off('click');
   }
 
   render() {
