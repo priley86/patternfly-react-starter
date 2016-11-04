@@ -12,6 +12,7 @@
     "fastclick": "^1.0.6",
     "history": "^3.0.0",
     "patternfly": "^3.12.0",
+    "patternfly-webcomponents": "git+https://github.com/patternfly-webcomponents/patternfly-webcomponents.git#dist",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
