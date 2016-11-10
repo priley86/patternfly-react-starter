@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * React Static Boilerplate
  * https://github.com/kriasoft/react-static-boilerplate
@@ -10,35 +12,34 @@
 
 /* eslint-disable global-require */
 
-const path = require('path');
-const webpack = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
-const pkg = require('./package.json');
+var path = require('path');
+var webpack = require('webpack');
+var AssetsPlugin = require('assets-webpack-plugin');
+var pkg = require('./package.json');
 
-const isDebug = global.DEBUG === false ? false : !process.argv.includes('--release');
-const isVerbose = process.argv.includes('--verbose') || process.argv.includes('-v');
-const useHMR = !!global.HMR; // Hot Module Replacement (HMR)
-const babelConfig = Object.assign({}, pkg.babel, {
+var isDebug = global.DEBUG === false ? false : !(process.argv.indexOf('--release') >= 0);
+var isVerbose = process.argv.indexOf('--verbose') >= 0 || process.argv.indexOf('-v') >= 0;
+var useHMR = !!global.HMR; // Hot Module Replacement (HMR)
+var babelConfig = Object.assign({}, pkg.babel, {
   babelrc: false,
-  cacheDirectory: useHMR,
+  cacheDirectory: useHMR
 });
 
 // Webpack configuration (main.js => public/dist/main.{hash}.js)
 // http://webpack.github.io/docs/configuration.html
-const config = {
+var config = {
 
   // The base directory for resolving the entry option
   context: __dirname,
 
   // The entry point for the bundle
   entry: [
-    //css entries
-    // '!!style!css!patternfly/dist/css/patternfly.css',
-    // '!!style!css!patternfly/dist/css/patternfly-additions.css',
-    
-    //js entries
-    'jquery-match-height/dist/jquery.matchHeight.js',
-    /* The main entry point of your JavaScript application */
+    //css entries 
+    // '!!style!css!patternfly/dist/css/patternfly.css', 
+    // '!!style!css!patternfly/dist/css/patternfly-additions.css',  
+    // js entries 
+    'jquery-match-height/dist/jquery.matchHeight.js', 
+    /* The main entry point of your JavaScript application */ 
     './main.js'
   ],
 
@@ -48,7 +49,7 @@ const config = {
     publicPath: '/dist/',
     filename: isDebug ? '[name].js?[hash]' : '[name].[hash].js',
     chunkFilename: isDebug ? '[id].js?[chunkhash]' : '[id].[chunkhash].js',
-    sourcePrefix: '  ',
+    sourcePrefix: '  '
   },
 
   // Switch loaders to debug or release mode
@@ -68,89 +69,65 @@ const config = {
     chunks: isVerbose,
     chunkModules: isVerbose,
     cached: isVerbose,
-    cachedAssets: isVerbose,
+    cachedAssets: isVerbose
   },
 
   // The list of plugins for Webpack compiler
   plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': isDebug ? '"development"' : '"production"',
-      __DEV__: isDebug,
+      __DEV__: isDebug
     }),
     // Emit a JSON file with assets paths
     // https://github.com/sporto/assets-webpack-plugin#options
     new AssetsPlugin({
       path: path.resolve(__dirname, './public/dist'),
       filename: 'assets.json',
-      prettyPrint: true,
-    }),
+      prettyPrint: true
+    })
   ],
 
   // Options affecting the normal modules
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        include: [
-          path.resolve(__dirname, './actions'),
-          path.resolve(__dirname, './components'),
-          path.resolve(__dirname, './core'),
-          path.resolve(__dirname, './pages'),
-          path.resolve(__dirname, './main.js'),
-        ],
-        loader: `babel-loader?${JSON.stringify(babelConfig)}`,
-      },
-      {
-        test: /\.css/,
-        loaders: [
-          'style-loader',
-          `css-loader?${JSON.stringify({
-            sourceMap: isDebug,
-            // CSS Modules https://github.com/css-modules/css-modules
-            modules: true,
-            localIdentName: isDebug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
-            // CSS Nano http://cssnano.co/options/
-            minimize: !isDebug,
-          })}`,
-          'postcss-loader',
-        ],
-      },
-      {
-        test: /\.json$/,
-        exclude: [
-          path.resolve(__dirname, './routes.json'),
-        ],
-        loader: 'json-loader',
-      },
-      {
-        test: /\.json$/,
-        include: [
-          path.resolve(__dirname, './routes.json'),
-        ],
-        loaders: [
-          `babel-loader?${JSON.stringify(babelConfig)}`,
-          path.resolve(__dirname, './utils/routes-loader.js'),
-        ],
-      },
-      {
-        test: /\.md$/,
-        loader: path.resolve(__dirname, './utils/markdown-loader.js'),
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000',
-      },
-      {
-        test: /\.(eot|ttf|wav|mp3)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-      },
-    ],
+    loaders: [{
+      test: /\.jsx?$/,
+      include: [path.resolve(__dirname, './actions'), path.resolve(__dirname, './data'), path.resolve(__dirname, './components'), path.resolve(__dirname, './core'), path.resolve(__dirname, './pages'), path.resolve(__dirname, './main.js')],
+      loader: 'babel-loader?' + JSON.stringify(babelConfig)
+    }, {
+      test: /\.css/,
+      loaders: ['style-loader', 'css-loader?' + JSON.stringify({
+        sourceMap: isDebug,
+        // CSS Modules https://github.com/css-modules/css-modules
+        modules: true,
+        localIdentName: isDebug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
+        // CSS Nano http://cssnano.co/options/
+        minimize: !isDebug
+      }), 'postcss-loader']
+    }, {
+      test: /\.json$/,
+      exclude: [path.resolve(__dirname, './routes.json')],
+      loader: 'json-loader'
+    }, {
+      test: /\.json$/,
+      include: [path.resolve(__dirname, './routes.json')],
+      loaders: ['babel-loader?' + JSON.stringify(babelConfig), path.resolve(__dirname, './utils/routes-loader.js')]
+    }, {
+      test: /\.md$/,
+      loader: path.resolve(__dirname, './utils/markdown-loader.js')
+    }, {
+      test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url-loader?limit=10000'
+    }, {
+      test: /\.(eot|ttf|wav|mp3)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file-loader'
+    }]
   },
 
   // The list of plugins for PostCSS
   // https://github.com/postcss/postcss
-  postcss(bundler) {
+  postcss: function postcss(bundler) {
     return [
       // Transfer @import rule by inlining content, e.g. @import 'normalize.css'
       // https://github.com/postcss/postcss-import
@@ -193,10 +170,8 @@ const config = {
       require('postcss-flexbugs-fixes')(),
       // Add vendor prefixes to CSS rules using values from caniuse.com
       // https://github.com/postcss/autoprefixer
-      require('autoprefixer')(),
-    ];
-  },
-
+      require('autoprefixer')()];
+  }
 };
 
 // Optimize the bundle in release (production) mode
